@@ -1,0 +1,164 @@
+/* Скидання */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(to right, #01011a, #06062b);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  color: rgb(229, 231, 235);
+}
+
+.navbar__container {
+  width: 100%;
+  max-width: 95vw;
+  padding: 0 2rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Лівий блок */
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.navbar__logo {
+  height: 70px;
+  cursor: pointer;
+}
+
+/* Меню */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar__menu a {
+  color: rgb(229, 231, 235);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.link-button:hover {
+  color: #90a5ff;
+}
+
+/* Кнопка справа */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar__button {
+  background-color: rgb(229, 231, 235);
+  color: black !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__button:hover {
+  background-color: #d4d4d4;
+}
+
+/* Бургер */
+.navbar__burger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: rgb(229, 231, 235);
+}
+
+/* Мобільна адаптація */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar__container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .navbar__left {
+    gap: 1rem;
+  }
+
+  .navbar__logo {
+    height: 50px;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #06062b;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar__menu.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .navbar__right {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .navbar__button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar__burger {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+  }
+}

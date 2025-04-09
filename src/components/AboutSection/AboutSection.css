@@ -1,0 +1,186 @@
+.about-section {
+  width: 100%;
+}
+
+/* ---------------------- DESKTOP ---------------------- */
+@media (min-width: 1550px) {
+  .about-section {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: url('../../../public/about2.png') center/cover no-repeat;
+    position: relative;
+  }
+
+  .about-section__image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to left,
+      rgba(229, 231, 235, 1) 20%,
+      rgba(229, 231, 235, 0.88) 29%,
+      rgba(255, 255, 255, 0.66) 35%,
+      rgba(255, 255, 255, 0.55) 45%,
+      rgba(255, 255, 255, 0.44) 50%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 4rem;
+  }
+
+  .about-section__image h2 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #0a082a;
+  }
+
+  .about-section__text-block {
+    position: absolute;
+    right: 4rem;
+    max-width: 660px;
+    color: #0a082a;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.55;
+    background: none;
+  }
+
+  .about-section__text-block p {
+    /* margin-top: 1.5rem; */
+    font-size: clamp(1rem, 1.2vw + 0.8rem, 2.25rem);
+  }
+
+  .about-section__text-block h2 {
+      /* font-size: 4.5rem; */
+      font-size: clamp(2rem, 3vw + 1rem, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #0a082a;
+      text-align: left;
+    }
+
+    .about-section__image h2 {
+      display: none;
+    }
+}
+
+/* ---------------------- MOBILE ---------------------- */
+@media (max-width: 767px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+
+  .about-section__image {
+    position: relative;
+    height: 60vh;
+    background: url('../../../public/about2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-section__image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  .about-section__image h2 {
+    position: relative;
+    z-index: 2;
+    color: rgb(229, 231, 235);
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .about-section__text-block {
+    background-color: rgb(229, 231, 235);
+    padding: 2rem;
+    text-align: center;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh;
+  }
+
+  .about-section__text-block p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .about-section__text-block h2 {
+    display: none; 
+  }
+}
+
+/* ---------------------- TABLET (768–1024px) ---------------------- */
+@media (min-width: 769px) and (max-width: 1550px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+
+  .about-section__image {
+    position: relative;
+    height: 60vh;
+    background: url('../../../public/about2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-section__image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  .about-section__image h2 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .about-section__text-block {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh;
+  }
+
+  .about-section__text-block p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #111;
+    margin: 0;
+  }
+
+  .about-section__text-block h2 {
+    display: none;
+  }
+}
+

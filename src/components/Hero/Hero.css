@@ -1,0 +1,230 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+    height: 100vh;
+    background-position: center 55%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color:  rgb(229, 231, 235);
+  }
+  
+  /* Градієнтний напівпрозорий шар */
+  .hero__gradient {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .hero__overlay {
+    max-width: 600px;
+  }
+  
+  .hero__overlay h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .hero__container {
+    width: 100%;
+    max-width: 80vw;
+    padding: 0 2rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .hero__button {
+    background-color:  rgb(229, 231, 235);
+    color: black;
+  padding: 1rem 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  }
+  
+  .hero__button:hover {
+    background-color:  rgb(229, 231, 235);
+  }
+
+  .hero__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .hero__text {
+    flex: 1;
+  }
+  
+  .hero__subheading {
+    color: #2c3e90;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .hero__heading {
+    font-size: 48px;
+    font-weight: 800;
+    color: #111;
+  }
+  
+  .hero__description {
+    flex: 1;
+    border-left: 2px solid #f7f7f7;
+    padding-left: 20px;
+    color: #555;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  .quote-intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  
+  .quote-left {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .quote-right {
+    flex: 1;
+    min-width: 250px;
+    border-left: 2px solid #fff;
+    padding-left: 20px;
+  }
+  
+  .quote-subtitle {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .quote-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .quote-description {
+    font-style: italic;
+    color: #f1f1f1;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .quote-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: px;
+    margin: 10px 0;
+  }
+  
+  .quote-button-wrapper {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .quote-description,
+.quote-subtitle,
+.hero__overlay h1 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+  
+  
+/* Центрування контенту для планшетів */
+@media screen and (max-width: 1024px) {
+  .hero__container {
+    justify-content: center;
+  }
+
+  .hero__overlay {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote-intro {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+  }
+
+  .quote-left, .quote-right {
+    min-width: unset;
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .quote-right {
+    max-width: 400px;
+  }
+
+  .quote-button-wrapper {
+    margin-top: 20px;
+  }
+}
+  
+  
+  @media screen and (max-width: 1024px) {
+    .hero__gradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0));
+      padding-left: 2rem;
+      padding-right: 2rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .hero__overlay h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero__button {
+      margin-top: 1rem;
+    }
+
+    .quote-intro {
+      flex-direction: column;
+      gap: 50px;
+    }
+  
+    .quote-right {
+      border-left: none;
+      border-top: 2px solid #fff;
+      padding-left: 0;
+      padding-top: 10px;
+    }
+
+    .quote-button-wrapper {
+      margin-top: 1px;
+    }
+  }
+  
+  

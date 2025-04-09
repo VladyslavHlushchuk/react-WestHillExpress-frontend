@@ -1,0 +1,144 @@
+.testimonials {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color:  rgb(229, 231, 235);
+  }
+  
+  .testimonials__title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0a082a;
+    font-weight: 800;
+  }
+  
+  /* --- Загальні стилі для карток --- */
+  .testimonials__card {
+    background-color: rgb(241, 241, 241);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    padding: 2rem;
+    text-align: left;
+  
+    /* Ось тут магія для фіксації зірок унизу: */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonials__rating {
+    margin-top: auto;
+  }
+  
+  .testimonials__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #0a082a;
+  }
+  
+  .testimonials__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* ----------------------------
+     1) Мобільний/планшет (до 1321px):
+        1 відгук + кнопки
+  ----------------------------- */
+  @media (max-width: 1321px) {
+    .testimonials__container.single {
+      /* position: relative; */
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      /* height: 350px; висота, щоб картка не стрибала */
+    }
+  
+    .testimonials__card {
+      /* розтягуємо на всю висоту, щоб зірки точно пішли вниз */
+      /* position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      margin: auto;
+      width: 100%;
+      max-width: 600px;
+      display: none; приховані за замовчуванням */
+
+      width: 100%;
+      max-width: 600px;
+      display: none;
+      background-color:rgb(241, 241, 241);
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+      padding: 2rem;
+      text-align: left;
+    
+      /* Flex, щоб rating був унизу */
+      flex-direction: column;
+    }
+  
+    .testimonials__card.active {
+      display: flex; /* flex, щоб rating міг піти вниз */
+      animation: fadeIn 0.4s ease;
+    }
+  
+    .testimonials__arrows {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .arrow-btn {
+      background-color: #ddd;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin: 0 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+    .arrow-btn:hover {
+      background-color: #ccc;
+    }
+  
+    .testimonials__name {
+      font-size: 1.3rem;
+    }
+    .testimonials__text {
+      font-size: 1.05rem;
+    }
+  }
+  
+  /* ----------------------------
+     2) Десктоп (від 1322px):
+        3 відгуки в грід, без кнопок
+  ----------------------------- */
+  @media (min-width: 1322px) {
+    .testimonials__container.grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .testimonials__card {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      display: flex; /* лишаємо flex */
+    }
+  
+    .testimonials__arrows {
+      display: none; /* на десктопі кнопки не потрібні */
+    }
+  }
+  
+  /* Анімація появи */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
