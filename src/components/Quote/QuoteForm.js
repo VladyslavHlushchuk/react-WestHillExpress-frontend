@@ -54,18 +54,26 @@ const QuoteForm = () => {
   };
 
   useEffect(() => {
-    if (window.google && mapRef.current && !mapInstance.current) {
-      mapInstance.current = new window.google.maps.Map(mapRef.current, {
-        zoom: 4,
-        center: { lat: 39.5, lng: -98.35 },
-      });
-      directionsRendererRef.current = new window.google.maps.DirectionsRenderer({ suppressMarkers: false });
-      directionsRendererRef.current.setMap(mapInstance.current);
-
-      initAutocomplete('from-location', setFrom);
-      initAutocomplete('to-location', setTo);
-    }
+    const interval = setInterval(() => {
+      if (window.google && window.google.maps && mapRef.current && !mapInstance.current) {
+        mapInstance.current = new window.google.maps.Map(mapRef.current, {
+          zoom: 4,
+          center: { lat: 39.5, lng: -98.35 }
+        });
+  
+        directionsRendererRef.current = new window.google.maps.DirectionsRenderer();
+        directionsRendererRef.current.setMap(mapInstance.current);
+  
+        initAutocomplete('from-location', setFrom);
+        initAutocomplete('to-location', setTo);
+  
+        clearInterval(interval);
+      }
+    }, 300);
+  
+    return () => clearInterval(interval);
   }, []);
+  
 
   const calculateDistance = useCallback(() => {
     if (!from || !to || !window.google) return;
