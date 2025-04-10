@@ -132,7 +132,7 @@ const QuoteForm = () => {
     setIsSending(true);
 
     try {
-      const res = await fetch('https://westhillexpressllc.com//send-quote', {
+      const res = await fetch('/api/send-quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullData)
