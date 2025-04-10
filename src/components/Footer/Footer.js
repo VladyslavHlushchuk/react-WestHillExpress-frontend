@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer__right">
         <div className="footer__contacts">
          <p><strong>    Contacts:</strong></p>
-              <p><FaPhoneAlt style={{ marginRight: '8px' }} /> +315-400-9620</p>
+              <p><FaPhoneAlt style={{ marginRight: '8px' }} /> +1-315-400-9620</p>
               <p><FaEnvelope style={{ marginRight: '8px' }} /> Westhillexpress@gmail.com</p>
           </div>
         </div>
